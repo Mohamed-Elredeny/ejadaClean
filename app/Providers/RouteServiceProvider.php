@@ -43,10 +43,14 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
         $this->mapApiRoutes();
-
         $this->mapWebRoutes();
-
-        //
+ /*       $this->mapAdminRoutes();
+        $this->generalManager();
+        $this->QualityManager();
+        $this->maintenanceManager();
+        $this->supervisor();
+        $this->employee();
+        //*/
     }
 
     /**
@@ -62,14 +66,45 @@ class RouteServiceProvider extends ServiceProvider
              ->namespace($this->namespace)
              ->group(base_path('routes/web.php'));
     }
+/*    protected function mapAdminRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/web.php'));
+    }
+    protected function mapGeneralManagerRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/admin.php'));
+    }//generalManager
+    protected function mapgeneralManager()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/generalManager.php'));
+    }//generalManager
+    protected function mapQualityManager()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/QualityManager.php'));
+    }//QualityManager
+    protected function mapmaintenanceManager()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/maintenanceManager.php'));
+    }//maintenanceManager
+    protected function mapsupervisor()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/supervisor.php'));
+    }//supervisor*/
 
-    /**
-     * Define the "api" routes for the application.
-     *
-     * These routes are typically stateless.
-     *
-     * @return void
-     */
+
+
     protected function mapApiRoutes()
     {
         Route::prefix('api')
